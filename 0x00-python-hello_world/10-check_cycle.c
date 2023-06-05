@@ -14,12 +14,12 @@ int check_cycle(listint_t *list)
 
 	elem1 = list->next;
 	elem2 = list->next->next;
-	while (elem1 != NULL && elem2 != NULL && elem2->next != NULL)
+	while (elem1 && elem2 && elem2->next)
 	{
 		if (elem1 == elem2)
 			return (1);
 		elem1 = elem1->next;
-		elem2 = elem2->next;
+		elem2 = elem2->next->next;
 	}
 	return (0);
 }
