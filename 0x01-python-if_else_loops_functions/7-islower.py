@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def islower(c):
     '''
     # The islower function checks if the given variable c
