@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''Define a Singly linked list'''
+
+
 class Node:
     '''Create the Node object'''
     def __init__(self, data, next_node=None):
