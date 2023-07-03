@@ -1,0 +1,24 @@
+================================
+ How to use 2-matrix_divided.py
+================================
+
+This library define the ``matrix_divided()`` function.
+
+Matrix of integers/floats
+=========================
+
+The ``matrix_divided()`` function should take a given matrix (list of lists)
+and devide it by a given value. The original matrix shouldn't be changed
+
+::
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6],
+	...	[7, 8, 9]
+	... ]
+	>>> print(matrix_divided(matrix, 1))
+	[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]]
+	>>> print(matrix)
+	[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
