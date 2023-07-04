@@ -1,0 +1,31 @@
+================================
+ How to use 2-matrix_divided.py
+================================
+
+This library define the ``matrix_divided()`` function.
+
+Matrix of integers/floats
+=========================
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Ezzaam", "Achraf")
+	My name is Ezzaam Achraf
+
+::
+
+	>>> say_my_name("Achraf")
+	My name is Achraf 
+
+::
+
+	>>> say_my_name(5)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string

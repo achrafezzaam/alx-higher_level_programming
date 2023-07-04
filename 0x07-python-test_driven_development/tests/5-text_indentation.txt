@@ -1,0 +1,25 @@
+================================
+ How to use 2-matrix_divided.py
+================================
+
+This library define the ``matrix_divided()`` function.
+
+Matrix of integers/floats
+=========================
+
+::
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("Test.")
+	Test.
+	<BLANKLINE>
+
+::
+
+	>>> text_indentation("   Test.   ")
+	Test.
+	<BLANKLINE>
+
+::
+
+	>>> text_indentation("      ")
