@@ -15,36 +15,40 @@ def stats(file_size, stats_dict):
         print("{}: {}".format(key, stats_dict[key]))
 
 
-def get_info(string):
-    '''Gets the file size and the status code of the current input
+if __name__ == "__main__":
+    import sys
 
-    Args:
-        string (str): The string to get the info from
-    '''
-    str_list = string.split()
-    return str_list[-1], str_list[-2]
-
-
-if __name__ == '__main__':
+    size = 0
+    codes = ['200', '301', '400', '401', '403', '404', '405', '500']
+    status_dict = {}
     count = 0
-    full_size = 0
-    stat_list = ['200', '301', '400', '401', '403', '404', '405', '500']
-    stat_dict = {}
-    while True:
-        if count != 10:
+
+    try:
+        for line in sys.stdin:
+            if count == 10:
+                stats(size, status_dict)
+                count = 1
+            else:
+                count += 1
+
+            line = line.split()
+
             try:
-                data = input()
-                size, status = get_info(data)
-                if status in stat_list:
-                    full_size += int(size)
-                    if status in stat_dict.keys():
-                        stat_dict[status] += 1
+                size += int(line[-1])
+            except (IndexError, ValueError):
+                pass
+
+            try:
+                if line[-2] in codes:
+                    if status_dict.get(line[-2], -1) == -1:
+                        status_dict[line[-2]] = 1
                     else:
-                        stat_dict[status] = 1
-                    count += 1
-            except KeyboardInterrupt:
-                stats(full_size, stat_dict)
-                raise
-        else:
-            stats(full_size, stat_dict)
-            count = 0
+                        status_dict[line[-2]] += 1
+            except IndexError:
+                pass
+
+        stats(size, status_dict)
+
+    except KeyboardInterrupt:
+        stats(size, status_dict)
+        raise
