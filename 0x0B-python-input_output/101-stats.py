@@ -11,8 +11,8 @@ def stats(file_size, stats_dict):
         and their occurencies
     '''
     print("File size: {}".format(file_size))
-    for key, value in sorted(stats_dict.items()):
-        print("{}: {}".format(key, value))
+    for key in sorted(stats_dict):
+        print("{}: {}".format(key, stats_dict[value]))
 
 
 def get_info(string):
