@@ -50,4 +50,4 @@ if __name__ == '__main__':
                 raise
         else:
             stats(full_size, stat_dict)
-            count = 0
+            count = 1
