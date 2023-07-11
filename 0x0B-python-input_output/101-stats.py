@@ -12,7 +12,7 @@ def stats(file_size, stats_dict):
     '''
     print("File size: {}".format(file_size))
     for key in sorted(stats_dict):
-        print("{}: {}".format(key, stats_dict[value]))
+        print("{}: {}".format(key, stats_dict[key]))
 
 
 def get_info(string):
