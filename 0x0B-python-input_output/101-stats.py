@@ -28,26 +28,23 @@ def get_info(string):
 if __name__ == '__main__':
     count = 0
     full_size = 0
-    stat_dict = {'200': 0,
-                 '301': 0,
-                 '400': 0,
-                 '401': 0,
-                 '403': 0,
-                 '404': 0,
-                 '405': 0,
-                 '500': 0}
+    stat_list = ['200', '301', '400', '401', '403', '404', '405', '500']
+    stat_dict = {}
     while True:
         if count != 10:
             try:
                 data = input()
                 size, status = get_info(data)
-                if status in stat_dict:
+                if status in stat_list:
                     full_size += int(size)
-                    stat_dict[status] += 1
+                    if status in stat_dict.keys():
+                        stat_dict[status] += 1
+                    else:
+                        stat_dict[status] = 1
                     count += 1
             except KeyboardInterrupt:
                 stats(full_size, stat_dict)
                 raise
         else:
             stats(full_size, stat_dict)
-            count = 1
+            count = 0
