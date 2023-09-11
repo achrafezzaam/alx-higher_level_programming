@@ -7,5 +7,5 @@ if (intArg) {
     console.log('X'.repeat(intArg));
   }
 } else {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 }
