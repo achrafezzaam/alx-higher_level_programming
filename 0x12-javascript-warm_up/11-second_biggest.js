@@ -1,13 +1,7 @@
 #!/usr/bin/node
-const args = process.argv;
-let i = 2;
-let save = 0;
-
-while (args[i] && args.length > 3) {
-  if (i === 2 || parseInt(args[i]) > save) {
-    save = parseInt(args[i]);
-  }
-  i++;
+if (process.argv.length > 3) {
+  const save = process.argv.map(Number).slice(2, process.argv.length).sort();
+  console.log(save[save.length - 2]);
+} else {
+  console.log(0);
 }
-
-console.log(save);
